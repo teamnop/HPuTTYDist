@@ -18,7 +18,7 @@ echo #define TEXTVER "HPuTTY %1" > ../HPuTTY/version.h
 echo #define SSHVER "HPuTTY-%1" >> ../HPuTTY/version.h
 echo #define BINARY_VERSION %upstreammajor%,%upstreamminor%,%trayversion%,%hputtyversion% >> ../HPuTTY/version.h
 
-msbuild ..\HPuTTY\windows\vs2012\putty.sln /p:Configuration=Release /t:Clean;Rebuild
+msbuild ..\HPuTTY\windows\vs2015\putty.sln /p:Configuration=Release /t:Clean;Rebuild
 
 rmdir tmp /s /q
 mkdir tmp
@@ -30,10 +30,10 @@ echo !define VERSIONMINOR "%upstreamminor%" >> tmp/version.nsh
 echo !define VERSIONBUILD "%hputtyversion%" >> tmp/version.nsh
 
 copy ..\HPuTTY\windows\putty.ico tmp
-copy ..\HPuTTY\windows\vs2012\putty\Release\putty.exe tmp
-copy ..\HPuTTY\windows\vs2012\psftp\Release\psftp.exe tmp
-copy ..\HPuTTY\windows\vs2012\pscp\Release\pscp.exe tmp
-copy ..\HPuTTY\windows\vs2012\plink\Release\plink.exe tmp
+copy ..\HPuTTY\windows\vs2015\putty\Release\putty.exe tmp
+copy ..\HPuTTY\windows\vs2015\psftp\Release\psftp.exe tmp
+copy ..\HPuTTY\windows\vs2015\pscp\Release\pscp.exe tmp
+copy ..\HPuTTY\windows\vs2015\plink\Release\plink.exe tmp
 
 "c:\Program Files (x86)\NSIS\makensis.exe" tmp\HPuTTYDist.nsi
 
