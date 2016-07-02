@@ -35,6 +35,11 @@ copy ..\HPuTTY\windows\vs2015\psftp\Release\psftp.exe tmp
 copy ..\HPuTTY\windows\vs2015\pscp\Release\pscp.exe tmp
 copy ..\HPuTTY\windows\vs2015\plink\Release\plink.exe tmp
 
+upx tmp\putty.exe
+upx tmp\psftp.exe
+upx tmp\pscp.exe
+upx tmp\plink.exe
+
 "c:\Program Files (x86)\NSIS\makensis.exe" tmp\HPuTTYDist.nsi
 
 copy tmp\hputty-installer.exe hputty-%1-installer.exe
